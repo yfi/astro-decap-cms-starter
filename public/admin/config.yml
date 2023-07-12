@@ -1,64 +1,26 @@
 backend:
   name: github
   repo: gxanshu/astro-decap-cms-starter #replace with your githu repo
-  branch: dev
+  branch: main
   squash_merges: true
   open_authoring: true
 
 publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: /images
-media_library:
-  name: cloudinary
-  config:
-    cloud_name: wargabantuwarga
-    api_key: 959777522745792
-    output_filename_only: true
 site_url: "https://codenanshu.in" # your site name
 
 collections:
-  - name: blog
-    label: Blog
-    folder: content/blog
+  - name: post
+    label: Posts
+    folder: src/content/posts
     create: true
-    extension: mdx
     format: frontmatter
-    preview_path: blog/{{slug}}
+    preview_path: post/{{slug}}
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: date, label: Date, widget: date }
-      - { name: slug, label: slug }
-      - { label: "Category", name: "category", widget: "select", options: ["blog", "tutorials", "notes"], default: "blog" }
-      - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
-      - { name: body, label: Body, widget: markdown }
-  - name: notes
-    label: Notes
-    folder: content/notes
-    create: true
-    extension: mdx
-    format: frontmatter
-    preview_path: notes/{{slug}}
-    fields:
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: date, label: Date, widget: date }
-      - { name: slug, label: slug }
-      - { label: "Category", name: "category", widget: "select", options: ["blog", "tutorials", "notes"], default: "tutorials"}
-      - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
-      - { name: body, label: Body, widget: markdown }
-  - name: tutorials
-    label: Tutorials
-    folder: content/tutorials
-    create: true
-    extension: mdx
-    format: frontmatter
-    preview_path: tutorials/{{slug}}
-    fields:
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: date, label: Date, widget: date }
-      - { name: slug, label: slug }
-      - { label: "Category", name: "category", widget: "select", options: ["blog", "tutorials", "notes"], default: "notes" }
-      - { label: "Image", name: "image", widget: "image", choose_url: true, media_library: { config: { multiple: false }}}
+      - { name: publishedAt, label: Date, widget: date }
+      - {label: "Publish", name: "isPublish", widget: "boolean", default: true}
+      - {label: "Draft", name: "isDraft", widget: "boolean", default: false}
       - { name: body, label: Body, widget: markdown }
