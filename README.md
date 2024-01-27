@@ -2,6 +2,8 @@
 
 ![Template](https://astro-decapcms-starter.netlify.app/opengraph-image.jpg)
 
+This Repo is not that much old but Astro is growing faster its hard for me to cachup due to some of my personal work. if anyone want to use this repo then please do update packages after cloning and look for astro docs to upgrade astro version. Netlify CMS intigration will work fine
+
 This theme/template is designed and crafted by [maxencewolff](https://www.maxencewolff.com) and futher develop by [me](https://codenanshu.in) 
 NB: Additional color themes can also be configured on the `src/data/theme.ts` file.
 
